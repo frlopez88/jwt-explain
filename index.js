@@ -3,12 +3,14 @@ const app = express();
 import { user } from './routes/userRoute.js';
 import { animal } from './routes/animalsRoute.js';
 import jwt from 'jsonwebtoken'
+import cors from 'cors'
 
 // middlewares (Funcion que se ejecuta antes de la ruta)
 // se configura el manejo de json 
 // y los cors 
 
 app.use(express.json());
+app.use(cors())
 
 const validarToken = (req, res, next) => {
 
